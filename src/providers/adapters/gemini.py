@@ -15,7 +15,8 @@ def get_completion(messages, tools_schema=None, model="gemini-3.1-pro-preview"):
 
         contents = []
         for m in messages:
-            if m["role"] == "system": continue
+            if m["role"] == "system":
+                continue
             role = "user" if m["role"] == "user" else "model"
             contents.append(types.Content(role=role, parts=[types.Part.from_text(text=m["content"])]))
         
