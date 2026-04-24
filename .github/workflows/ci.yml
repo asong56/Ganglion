@@ -15,6 +15,7 @@ jobs:
         with:
           enable-cache: true
 
+      - run: uv init
       - run: uv lock
       - run: uv sync --frozen
       - run: uv run ruff check src/
