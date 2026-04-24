@@ -18,8 +18,8 @@ jobs:
       - run: uv init
       - run: uv lock
       - run: uv sync --frozen
-      - run: uvx run ruff check src/
-      - run: uvx run ruff format --check src/
+      - run: uvx ruff check src/
+      - run: uvx ruff format --check src/
       - run: |
           uv pip install pytest
           uv run pytest
